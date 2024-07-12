@@ -418,3 +418,16 @@ If you find our paper and code useful in your research, please consider giving a
 ## ✨Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=bigai-ai/ICE&type=Date)](https://star-history.com/#bigai-ai/ICE&Date)
+
+## 🎉Contributors
+<img src="assets\2contributors.png" width="700px">
+
+[![Contributors](https://img.shields.io/badge/Contributor-SiyuanQi-blue?logo=github)](https://github.com/SiyuanQi) 
+[![Contributors](https://img.shields.io/badge/Contributor-BangchengYang-blue?logo=github)](https://github.com/DumbMice) 
+[![Contributors](https://img.shields.io/badge/Contributor-KailinJiang-blue?logo=github)](https://github.com/kailinjiang) 
+[![Contributors](https://img.shields.io/badge/Contributor-XiaoboWang-blue?logo=github)](https://github.com/Yofuria)  <br>
+[![Contributors](https://img.shields.io/badge/Contributor-JiaqiLi-blue?logo=github)](https://github.com/lijiaqijane) 
+[![Contributors](https://img.shields.io/badge/Contributor-YifanZhong-blue?logo=github)](https://github.com/Ivan-Zhong) 
+[![Contributors](https://img.shields.io/badge/Contributor-YaodongYang-blue?logo=github)](https://github.com/PKU-YYang) 
+[![Contributors](https://img.shields.io/badge/Contributor-ZilongZheng-blue?logo=github)](https://github.com/zilongzheng)  <br>
+
