@@ -6,11 +6,7 @@
 
 <h5 align="center">
 
-[![arXiv](https://img.shields.io/badge/Arxiv-2406.11194-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2406.11194)
-[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-ICE-blue)](https://huggingface.co/datasets/Yofuria/ICE)
-[![paperwithcode](https://img.shields.io/badge/PWC-ICE-blue?logo=paperswithcode)](https://paperswithcode.com/paper/in-context-editing-learning-knowledge-from)
-[![punkt](https://img.shields.io/badge/%F0%9F%A4%97%20punkt-ICE-blue)](https://huggingface.co/datasets/kailinjiang/punkt)  
-[![KnowledgeEditingPapers](https://img.shields.io/badge/Code-ICE-blue?logo=github)](https://github.com/zjunlp/KnowledgeEditingPapers)  <br>
+[![arXiv](https://img.shields.io/badge/Arxiv-2406.11194-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2406.11194) [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-ICE-blue)](https://huggingface.co/datasets/Yofuria/ICE) [![paperwithcode](https://img.shields.io/badge/PWC-ICE-blue?logo=paperswithcode)](https://paperswithcode.com/paper/in-context-editing-learning-knowledge-from) [![punkt](https://img.shields.io/badge/%F0%9F%A4%97%20punkt-ICE-blue)](https://huggingface.co/datasets/kailinjiang/punkt) [![KnowledgeEditingPapers](https://img.shields.io/badge/Code-ICE-blue?logo=github)](https://github.com/zjunlp/KnowledgeEditingPapers)
 
 
 
