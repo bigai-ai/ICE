@@ -335,38 +335,7 @@ python examples/run_knowedit_llama2.py \
 
 The optional range of `datatype` is `['zsre','recent','counterfact','wikibio']`
 
-**ICE/gpt2-xl.yaml**
 
-```
-alg_name: "FT"
-model_name: openai-community/gpt2-xl   # or local checkpoint path
-device: 0
-layers: [13, 14, 15, 16, 17]
-num_steps: 25
-batch_size: 3
-max_length: 40
-lr: 7e-4
-weight_decay: 0
-kl_factor: 0
-norm_constraint: 5e-4
-grad_norm_constraint: 5e-4
-num_return_sequences: 1
-max_new_tokens: 3
-static_target: False
-sample_with_context: True
-target_update_interval: 1
-temperature: 100.0
-print_kl: True
-
-objective_optimization: "target_and_completion_with_context"
-rewrite_module_tmp: "transformer.h.{}.mlp.c_proj"
-layer_module_tmp: "transformer.h.{}"
-mlp_module_tmp: "transformer.h.{}.mlp"
-attn_module_tmp: "transformer.h.{}.attn"
-ln_f_module: "transformer.ln_f"
-lm_head_module: "transformer.wte"
-model_parallel: False
-```
 
 ## 🚀Main Results
 
