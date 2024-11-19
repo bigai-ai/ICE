@@ -1,9 +1,5 @@
-<p align="center">
-    <img src="assets/logo.png" width="500" style="margin-bottom: 0.2;"/>
-<p>
-<h2 align="center"> <a href="https://arxiv.org/abs/2406.11194">In-Context Editing: Learning Knowledge from Self-Induced Distributions</a></h2>
-<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub.  </h2>
 
+<h1 align="center"> <a href="https://arxiv.org/abs/2406.11194">In-Context Editing: Learning Knowledge from Self-Induced Distributions</a></h1>
 <h5 align="center">
 
 [![arXiv](https://img.shields.io/badge/Arxiv-2406.11194-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2406.11194) [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-ICE-blue)](https://huggingface.co/datasets/Yofuria/ICE) [![paperwithcode](https://img.shields.io/badge/PWC-ICE-blue?logo=paperswithcode)](https://paperswithcode.com/paper/in-context-editing-learning-knowledge-from) [![punkt](https://img.shields.io/badge/%F0%9F%A4%97%20punkt-ICE-blue)](https://huggingface.co/datasets/kailinjiang/punkt) [![KnowledgeEditingPapers](https://img.shields.io/badge/KnowledgeEditingPapers-ICE-blue?logo=github)](https://github.com/zjunlp/KnowledgeEditingPapers) [![AIModels.fyi](https://img.shields.io/badge/AIModels.fyi-ICE-blue?logo=anthropic)](https://www.aimodels.fyi/papers/arxiv/context-editing-learning-knowledge-from-self-induced)
@@ -14,6 +10,8 @@
 
 # About
 
+This repository is the official implementation of the paper "In-Context Editing: Learning Knowledge from Self-Induced Distributions". The main idea of this paper is to use an in-context distribution to guide the learning process of knowledge editing for language models.
+
 This project is developed based on [EasyEdit](https://github.com/zjunlp/EasyEdit). Please refer to the original repository for more details of other methods and an overview of knowledge editing. The following is a list of related repositories:
 
 - [EasyEdit](https://github.com/zjunlp/EasyEdit)  An open source knowledge edit framework.
@@ -22,44 +20,13 @@ This project is developed based on [EasyEdit](https://github.com/zjunlp/EasyEdit
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [🔔News](#news)
-- [🌟Overview](#overview)
+<!-- - [🔔News](#news)
+- [🌟Overview](#overview) -->
 - [🤗Dataset](#dataset)
-- [😮Highlights](#highlights)
-  - [🔥 Target learning towards a distribution rather than a one-hot target](#-target-learning-towards-a-distribution-rather-than-a-one-hot-target)
-  - [💡 High continual editing performance](#-high-continual-editing-performance)
 - [🛠️Requirements and Installation](#️requirements-and-installation)
 - [🤖Evaluation](#evaluation)
 - [💥Training](#training)
-- [🚀Main Results](#main-results)
-- [⚡️More qualitative results](#️more-qualitative-results)
-- [👍Acknowledgement](#acknowledgement)
-- [✏️Citation](#️citation)
-- [✨Star History](#star-history)
-- [🎉Contributors](#contributors)
 
-## 🔔News
-
-- **[2024.07.03]**  **Code** is available now!
-
-- **[2024.07.03]**  We release the **ICE dataset** at 🤗 [Huggingface Dataset](https://huggingface.co/datasets/Yofuria/ICE).
-
-- **[2023.06.18]**  We hung the **paper** on 🤗 [Huggingface Papers](https://huggingface.co/papers/2406.11194).
-
-## 🌟Overview
-
-<img src="assets\overview.png" width="900px">
-
-**(a)** **In-Context Learning:** Utilizes context prompts without modifying the model's parameters.
-
-**(b) Traditional Fine-Tuning:** Relies on minimizing a distance metric between the model's predictions and one-hot target distributions, often leading to overfitting and unnatural language generation.
-
-**(c) Consistent In-Context Editing (ICE):** Leverages context prompts related to the target knowledge to guide the model towards a new distribution that aligns with the desired knowledge, while maintaining similarity to its original distribution.
-
-<div align="center">
-  <img src="assets/algorithm.png" width="350px">
-</div>
 
 ## 🤗Dataset
 
@@ -116,28 +83,6 @@ ICE
 |   |-- zsre.json
 ```
 
-## 😮Highlights
-
-### 🔥 Target learning towards a distribution rather than a one-hot target
-
-**In-Context Editing (ICE)** is a novel approach to overcome the brittleness of traditional fine-tuning in knowledge editing scenarios that learns towards a one-hot target.
-
-<div align="center">   <img src="assets/convergence.jpg" width="800px"> </div>
-
-Comparison of ICE with static and dynamic targets on an example, where the query is `"The name of the country which Academy Award for Best Picture is associated with is?"`, and target is `"Wassoulou Empire"`.
-
-**The line** plots on the left illustrate the loss trajectories over optimization steps for static (top) and dynamic (bottom) targets under temperature from 0.1 to 100. **The figures** on the right show how the probabilities of the top-6 predicted tokens for **$x_2$**, the second token following the target, change with iteration steps.
-
-The tokens are arranged from left to right in descending order of probability without context. At early steps, the token `"Wass"` appears due to its presence as the initial token in the target **$x^*$**. At later steps, the probability of `"Wass"` in dynamic targets (top) significantly declines, indicating successful adaptation and suppression of repetitive token predictions. In contrast, for static targets (bottom), the probability of `"Wass"` remains relatively high throughout the optimization steps.
-
-### 💡 High continual editing performance
-
-**Our results confirm the effectiveness of ICE and demonstrate its potential for continual editing**, ensuring that updated information is seamlessly incorporated while preserving the integrity of existing knowledge.
-
-<div align="center">   <img src="assets/continual edit.jpg" width="650px"> </div>
-
-**Continual editing** with Llama2-7b-chat on **Wiki<sub>recent</sub>**. Each edit builds on the previous model, risking deterioration over time. The model is assessed immediately after each edit without re-evaluating previous edits, testing its ability to update continuously. While most methods deteriorate, sometimes performing worse than the unedited version, our method, ICE, maintains integrity and achieves promising performance.
-
 ## 🛠️Requirements and Installation
 
 ```text
@@ -155,7 +100,7 @@ pip install -r requirements.txt
 
 In **lines 32 and 33** of **`examples/run_knowedit_llama2.py`**, you need to download the **`punkt`** package.
 
-- If your Internet **speed is fast** enough, you can **run the code directly** from the command line.
+- If your **internet connection is sufficiently fast**, you can **execute the code directly** from the command line.
 
 ```text
 if __name__ == "__main__":
@@ -164,7 +109,7 @@ if __name__ == "__main__":
     nltk.download('punkt')
 ```
 
-- If your Internet **speed is slow**, **comment lines 32 and 33** and **download punkt manually**🤗 [punkt](https://huggingface.co/datasets/kailinjiang/punkt). And place it in the ICE environment directory you created, create a **nltk_data/tokenizers** folder, and **unpack punkt** into this directory.
+- If your **internet speed is slow**, **comment out lines 32 and 33** and **manually download the punkt package** from [punkt](https://huggingface.co/datasets/kailinjiang/punkt). Place it in the ICE environment directory you created, then create a **nltk_data/tokenizers** folder, and **extract the contents of punkt** into this directory.
 
 <div align="center">   <img src="assets/punkt.png" width="650px"> </div>
 
@@ -265,36 +210,6 @@ The optional range of `datatype` is `['zsre','recent','counterfact','wikibio']`
 
 
 
-## 🚀Main Results
-
-- Main results on **knowledge insertion and question-answering datasets** of Llama2-7b-chat
-
-<img src="assets\llama2_main-results1.png" width="1000px">
-
-- Main results on **knowledge modification datasets** of Llama2-7b-chat
-
-<img src="assets\llama2_main-results2.png" width="1000px">
-
-- **Continual editing results** of Llama2-7b-chat
-
-<div align="center">
-  <img src="assets/continual edit.png" width="500px">
-</div>
-
-## ⚡️More qualitative results
-
-<div align="center">
-  <img src="assets/qualitative1.png" width="650px">
-</div>
-
-<div align="center">
-  <img src="assets/qualitative2.png" width="650px">
-</div>
-
-<div align="center">
-  <img src="assets/qualitative3.png" width="650px">
-</div>
-
 ## ✏️Citation
 
 If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil:.
@@ -311,9 +226,9 @@ If you find our paper and code useful in your research, please consider giving a
 }
 ```
 
-## ✨Star History
+<!-- ## ✨Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=bigai-ai/ICE&type=Date)](https://star-history.com/#bigai-ai/ICE&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=bigai-ai/ICE&type=Date)](https://star-history.com/#bigai-ai/ICE&Date) -->
 
 ## 🎉Contributors
 <img src="assets\2contributors.png" width="700px">
