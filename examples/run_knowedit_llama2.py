@@ -234,7 +234,7 @@ if __name__ == "__main__":
         locality_inputs=locality_inputs,
         portability_inputs=portability_inputs,
         train_ds=train_ds,
-        keep_original_weight=False,
+        keep_original_weight=True,
         pre_file=args.pre_file,
         editing_method=args.editing_method,
         datatype = args.datatype,
